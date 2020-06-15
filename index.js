@@ -80,12 +80,17 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
-
-  /*Code Here*/
-
+function finalScore(callback, inning){
+  let finalObj = {Home: 0, Away: 0}
+    for(let i = 1; i <= inning; i++){
+      let homeScore = finalObj.Home += callback();
+      let awayScore = finalObj.Away += callback();
+      console.log(`INNING:${i} the HOME team has scored ${callback()} points the AWAY team has scored ${callback(i)} points. The score is now ${homeScore} to ${awayScore}`)
+    }
+  return finalObj
 }
 
+console.log()
 /* Task 4: 
 
 Create a function called `scoreboard` that accepts the following parameters: 
@@ -107,8 +112,25 @@ and returns the score at each pont in the game, like so:
 
 Final Score: 6 - 10 */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(inning, index) {
+  const homeScore = 0;
+  const awayScore = 0;
+  for (let i = 0; i < inning; i++){
+    homeScore
+    awayScore
+  }
+  return {
+    '1st Inning': `${homeScore} - ${awayScore}`,
+    '2nd Inning': `${homeScore} - ${awayScore}`,
+    '3rd Inning': `${homeScore} - ${awayScore}`,
+    '4th Inning': `${homeScore} - ${awayScore}`,
+    '5th Inning': `${homeScore} - ${awayScore}`,
+    '6th Inning': `${homeScore} - ${awayScore}`,
+    '7th Inning': `${homeScore} - ${awayScore}`,
+    '8th Inning': `${homeScore} - ${awayScore}`,
+    '9th Inning': `${homeScore} - ${awayScore}`,
+    'Final Score': `${homeScore} - ${awayScore}`
+  }
 }
 
-
+console.log(scoreboard(inning, 6));
